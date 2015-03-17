@@ -15,11 +15,17 @@
 <body class="platform-cordova">
     <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-    <![endif]-->
-    <ui-view>
-      <h2> HIIIII </h2>
-      <p>how r u?</p>
-    </ui-view>
+	    <![endif]-->
+    <ion-nav-bar class="bar-positive">
+    </ion-nav-bar>
+    <ion-tabs class="tabs-positive">
+      <ion-tab icon="ion-home" ui-sref="home">
+	<ion-nav-view name="home"></ion-nav-view>
+      </ion-tab>
+      <ion-tab icon="ion-help" ui-sref="help">
+	<ion-nav-view name="help"></ion-nav-view>
+      </ion-tab>
+    </ion-tabs>
     <script src="cordova.js"></script>
     <script src="scripts/bundle.js"></script>
 </body>

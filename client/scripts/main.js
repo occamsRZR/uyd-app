@@ -9,6 +9,10 @@ var app = angular.module(namespace, ['ionic',
     
     
     
+    require('./episodes')(namespace).name
+    
+    
+    
     // inject:modules end
 ]);
 
