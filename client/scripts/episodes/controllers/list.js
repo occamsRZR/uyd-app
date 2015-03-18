@@ -1,5 +1,5 @@
 'use strict';
-var controllername = 'trending';
+var controllername = 'list';
 
 module.exports = function(app) {
     /*jshint validthis: true */
@@ -7,13 +7,7 @@ module.exports = function(app) {
     var deps = ['$scope'];
 
     function controller($scope) {
-        var vm = this;
-        vm.message = 'HelloGrrrrrl';
-	$scope.message = 'helo wrrrld';
-        var activate = function() {
-
-        };
-        activate();
+	$scope.message = "HelloGrrrl";
     }
 
     controller.$inject = deps;

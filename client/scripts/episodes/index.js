@@ -1,8 +1,5 @@
 'use strict';
 require('angular-ui-router');
-require('angular-ionic');
-require('famous-angular');
-require('ngCordova');
 
 var modulename = 'episodes';
 
@@ -14,7 +11,6 @@ module.exports = function(namespace) {
     // inject:folders start
     require('./controllers')(app);
     // inject:folders end
-
     app.config(['$stateProvider', '$urlRouterProvider',
         function($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/');
@@ -22,21 +18,20 @@ module.exports = function(namespace) {
                 url: '/',
 		views: {
 		    home: {
-			template: require('./views/home.html')
+			template: require('./views/home.html'),
+			controller: 'main.episodes.trending'
 		    }
-		},
-		controller: fullname + '.trending as trendingCtrl'
-            })
+		}
+            });
             $stateProvider.state('episodes', {
                 url: '/episodes',
 		views: {
 		    episodes: {
-			template: require('./views/episodes.html')
+			template: require('./views/episodes.html'),
+			controller: 'main.episodes.list'
 		    }
-		},
-		controller: 'main.episodes.trending as trendingCtrl'
-		
-            })
+		}
+            });
 	    $stateProvider.state('help', {
                 url: '/help',
 		views: {
@@ -44,9 +39,7 @@ module.exports = function(namespace) {
 			template: require('./views/help.html')
 		    }
 		}
-            })
-	    console.log('from router' + fullname + '.trending as trendingCtrl');
-
+            });
         }
     ]);
 
