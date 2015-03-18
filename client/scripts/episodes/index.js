@@ -13,17 +13,18 @@ module.exports = function(namespace) {
     // inject:folders end
     app.config(['$stateProvider', '$urlRouterProvider',
         function($stateProvider, $urlRouterProvider) {
-            $urlRouterProvider.otherwise('/');
-            $stateProvider.state('home', {
-                url: '/',
-		views: {
-		    home: {
-			template: require('./views/home.html'),
+
+            $stateProvider
+		.state('home', {
+                    url: '/',
+		    views: {
+			home: {
+			    template: require('./views/home.html'),
 			controller: 'main.episodes.trending'
+			}
 		    }
-		}
-            });
-            $stateProvider.state('episodes', {
+		})
+	    $stateProvider.state('episodes', {	    // episodes index
                 url: '/episodes',
 		views: {
 		    episodes: {
@@ -31,15 +32,26 @@ module.exports = function(namespace) {
 			controller: 'main.episodes.list'
 		    }
 		}
-            });
-	    $stateProvider.state('help', {
-                url: '/help',
+	    });
+	    $stateProvider.state('episode.show', {	    // episodes show
+                url: '/:episodeId',
 		views: {
-		    help: {
-			template: require('./views/help.html')
+		    episodeShow: {
+			template: require('./views/show.html'),
+			controller: 'main.episodes.show'
 		    }
 		}
-            });
+	    });
+	    // help
+	    $stateProvider
+		.state('help', {
+                    url: '/help',
+		    views: {
+			help: {
+			    template: require('./views/help.html')
+			}
+		    }
+		});
         }
     ]);
 

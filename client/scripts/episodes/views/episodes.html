@@ -1,3 +1,11 @@
-<h2>All of the episodes</h2>
-<p>episodes?</p>
-<div>{{message}}</div>
+<ion-view title="Episodes">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="episode in episodes" ui-sref='episode.show({episodeId: episode.slug})'>
+	{{episode.title}} 
+	</ion-nav-view>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+
