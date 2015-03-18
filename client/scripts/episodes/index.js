@@ -18,15 +18,6 @@ module.exports = function(namespace) {
     app.config(['$stateProvider', '$urlRouterProvider',
         function($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/');
-            $stateProvider.state('episodes', {
-                url: '/episodes',
-		views: {
-		    episodes: {
-			templateUrl: 'episodes.html'
-		    }
-		}
-            })
-
             $stateProvider.state('home', {
                 url: '/',
 		views: {
@@ -34,8 +25,27 @@ module.exports = function(namespace) {
 			template: require('./views/home.html')
 		    }
 		},
-		controller: fullname + '.trending'
+		controller: fullname + '.trending as trendingCtrl'
             })
+            $stateProvider.state('episodes', {
+                url: '/episodes',
+		views: {
+		    episodes: {
+			template: require('./views/episodes.html')
+		    }
+		},
+		controller: 'main.episodes.trending as trendingCtrl'
+		
+            })
+	    $stateProvider.state('help', {
+                url: '/help',
+		views: {
+		    help: {
+			template: require('./views/help.html')
+		    }
+		}
+            })
+	    console.log('from router' + fullname + '.trending as trendingCtrl');
 
         }
     ]);

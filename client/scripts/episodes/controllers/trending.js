@@ -17,4 +17,5 @@ module.exports = function(app) {
 
     controller.$inject = deps;
     app.controller(app.name + '.' + controllername, controller);
+    console.log(app.name + '.' + controllername);
 };
