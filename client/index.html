@@ -16,18 +16,69 @@
     <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 	    <![endif]-->
-    <ion-nav-bar class="bar-positive">
-    </ion-nav-bar>
     <ion-tabs class="tabs-positive">
       <ion-tab icon="ion-home" ui-sref="home">
-	<ion-nav-view name="home"></ion-nav-view>
+	<ion-nav-view name="home">
+	  <h1> home </h1>
+	</ion-nav-view>
+      </ion-tab>
+      <ion-tab icon="ion-grid" ui-sref="episodes">
+	<ion-nav-view name="episodes" ng-controller="main.episodes.trending as trendingCtrl">
+	</ion-nav-view>
       </ion-tab>
       <ion-tab icon="ion-help" ui-sref="help">
-	<ion-nav-view name="help"></ion-nav-view>
+	<ion-nav-view name="help">
+	  <h1> help </h1>
+	</ion-nav-view>
       </ion-tab>
     </ion-tabs>
-    <script src="cordova.js"></script>
     <script src="scripts/bundle.js"></script>
+    <script src="cordova.js"></script>
+
+    <script type="text/ng-template" id="home.html">
+      <ion-view title="Home">
+	<ion-content padding="true">
+	  <h2>Home Page</h2>
+	  <p>Here's the main route for the app.</p>
+	</ion-content>
+      </ion-view>
+    </script>
+
+    <script type="text/ng-template" id="help.html">
+      <ion-view title="Home">
+	<ion-content padding="true">
+	  <h2>Using the app</h2>
+	  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis architecto hic officia quasi excepturi sequi deleniti maiores consectetur veritatis sint?</p>
+	</ion-content>
+      </ion-view>
+    </script>
+
+    <script type="text/ng-template" id="home.html">
+      <ion-view title="Home">
+	<ion-content padding="true">
+	  <h2>Home Page</h2>
+	  <p>Here's the main route for the app.</p>
+	</ion-content>
+      </ion-view>
+    </script>
+    
+    <script type="text/ng-template" id="episodes.html">
+      <ion-view title="Home">
+	<ion-content padding="true">
+	  <h2>Episodes</h2>
+	  <p>Here's episodes.</p>
+	</ion-content>
+      </ion-view>
+    </script>
+    
+    <script type="text/ng-template" id="help.html">
+      <ion-view title="Home">
+	<ion-content padding="true">
+	  <h2>Using the app</h2>
+	  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis architecto hic officia quasi excepturi sequi deleniti maiores consectetur veritatis sint?</p>
+	</ion-content>
+      </ion-view>
+    </script>
 </body>
 
 </html>

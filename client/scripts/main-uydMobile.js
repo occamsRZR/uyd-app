@@ -7,9 +7,9 @@ require('angular-ionic');
 var app = angular.module(namespace, ['ionic',
     // inject:modules start
     
-    require('./episodes')(namespace).name,
+    require('./episode')(namespace).name,
     
-        require('./main')(namespace).name
+        require('./episodes')(namespace).name
     
     // inject:modules end
 ]);
